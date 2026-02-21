@@ -1,5 +1,15 @@
+# Node modules (very large - DO NOT UPLOAD)
 server/node_modules/
-server/data/
-server/.env
+
+# Python virtual environment (very large - DO NOT UPLOAD)
+.venv/
+__pycache__/
+*.pyc
+
+# Environment files
+.env
+.env.local
+
+# OS files
 .DS_Store
-*.log
+Thumbs.db

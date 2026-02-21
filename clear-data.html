@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Clear localStorage Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        button {
+            background: #ef4444;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        button:hover {
+            background: #dc2626;
+        }
+
+        .success {
+            color: green;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .info {
+            background: #f0f9ff;
+            padding: 15px;
+            border-left: 4px solid #3b82f6;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🗑️ Clear Old Attendance Data</h1>
+
+    <div class="info">
+        <strong>Why clear data?</strong><br>
+        Old attendance records uploaded before the Attendance Id mapping fix may show "Unknown" sections. Clearing this
+        data will remove those incorrect entries.
+    </div>
+
+    <button onclick="clearData()">Clear All Attendance Data</button>
+
+    <div id="result"></div>
+
+    <script>
+        function clearData() {
+            const result = document.getElementById('result');
+
+            try {
+                // Clear attendance data
+                localStorage.removeItem('ams_attendance_data');
+                localStorage.removeItem('ams_employee_data');
+                localStorage.removeItem('ams_upload_history');
+
+                result.innerHTML = '<div class="success">✓ All old attendance data cleared!<br><br>You can now:<br>1. Close this page<br>2. Go to <a href="index.html">http://localhost:8000</a><br>3. Upload your attendance files<br>4. All sections will be correctly mapped!</div>';
+            } catch (error) {
+                result.innerHTML = '<p style="color: red;">Error: ' + error.message + '</p>';
+            }
+        }
+    </script>
+</body>
+
+</html>

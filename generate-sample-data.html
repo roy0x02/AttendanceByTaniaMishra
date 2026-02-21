@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Sample Attendance Data</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .generator-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px;
+            background: var(--card-background);
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .generator-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .generator-header h1 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .generator-header p {
+            color: var(--text-muted);
+        }
+
+        .generator-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .control-group label {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .control-group input,
+        .control-group select {
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .generate-btn {
+            width: 100%;
+            padding: 16px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .generate-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0, 123, 255, 0.3);
+        }
+
+        .generate-btn:disabled {
+            background: var(--border);
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .progress-container {
+            margin-top: 20px;
+            display: none;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: var(--background);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--success));
+            width: 0%;
+            transition: width 0.3s;
+        }
+
+        .status-message {
+            text-align: center;
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+
+        .status-message.success {
+            background: rgba(52, 211, 153, 0.1);
+            color: var(--success);
+        }
+
+        .status-message.error {
+            background: rgba(239, 68, 68, 0.1);
+            color: var(--danger);
+        }
+
+        .stats-display {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .stat-box {
+            background: var(--background);
+            padding: 16px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="generator-container">
+        <div class="generator-header">
+            <h1>📊 Sample Data Generator</h1>
+            <p>Generate realistic attendance data for testing and dashboard visualization</p>
+        </div>
+
+        <div class="generator-controls">
+            <div class="control-group">
+                <label for="startDate">Start Date:</label>
+                <input type="date" id="startDate" value="2026-01-01">
+            </div>
+
+            <div class="control-group">
+                <label for="endDate">End Date:</label>
+                <input type="date" id="endDate" value="2026-01-30">
+            </div>
+
+            <div class="control-group">
+                <label for="attendanceRate">Average Attendance Rate (%):</label>
+                <input type="number" id="attendanceRate" min="60" max="100" value="85">
+                <small style="color: var(--text-muted)">Percentage of employees who will be marked present each day
+                    (70-95% recommended)</small>
+            </div>
+
+            <button class="generate-btn" id="generateBtn" onclick="generateSampleData()">
+                🚀 Generate Sample Data
+            </button>
+        </div>
+
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="status-message" id="statusMessage">Generating data...</div>
+        </div>
+
+        <div class="stats-display" id="statsDisplay" style="display: none;">
+            <div class="stat-box">
+                <div class="stat-value" id="daysGenerated">0</div>
+                <div class="stat-label">Days Generated</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value" id="totalRecords">0</div>
+                <div class="stat-label">Total Records</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value" id="avgAttendance">0%</div>
+                <div class="stat-label">Avg Attendance</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+    <!-- Application Scripts -->
+    <script src="employee-mapping.js"></script>
+    <script src="config.js"></script>
+    <script src="storage-manager.js"></script>
+    <script src="data-processor.js"></script>
+
+    <script>
+        async function generateSampleData() {
+            const startDateInput = document.getElementById('startDate').value;
+            const endDateInput = document.getElementById('endDate').value;
+            const attendanceRate = parseInt(document.getElementById('attendanceRate').value) / 100;
+
+            if (!startDateInput || !endDateInput) {
+                alert('Please select both start and end dates');
+                return;
+            }
+
+            const startDate = new Date(startDateInput);
+            const endDate = new Date(endDateInput);
+
+            if (startDate > endDate) {
+                alert('Start date must be before end date');
+                return;
+            }
+
+            // Initialize storage
+            try {
+                await StorageManager.init();
+            } catch (error) {
+                console.error('Failed to initialize storage:', error);
+                alert('Failed to initialize storage. Please check console for details.');
+                return;
+            }
+
+            // Show progress
+            const progressContainer = document.getElementById('progressContainer');
+            const progressFill = document.getElementById('progressFill');
+            const statusMessage = document.getElementById('statusMessage');
+            const generateBtn = document.getElementById('generateBtn');
+            const statsDisplay = document.getElementById('statsDisplay');
+
+            progressContainer.style.display = 'block';
+            statsDisplay.style.display = 'none';
+            generateBtn.disabled = true;
+            statusMessage.className = 'status-message';
+            statusMessage.textContent = 'Generating data...';
+            progressFill.style.width = '0%';
+
+            // Calculate total days
+            const totalDays = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24)) + 1;
+            let daysProcessed = 0;
+            let totalRecordsGenerated = 0;
+            let totalPresentCount = 0;
+
+            try {
+                // Get all employees from mapping
+                const allEmployees = Object.entries(ATTENDANCE_ID_MAPPING);
+                console.log(`Found ${allEmployees.length} employees in mapping`);
+
+                // Generate data for each day
+                for (let date = new Date(startDate); date <= endDate; date.setDate(date.getDate() + 1)) {
+                    const dateStr = date.toISOString().split('T')[0];
+                    const attendanceRecords = [];
+
+                    // For each employee, decide if they're present or absent
+                    allEmployees.forEach(([attendanceId, employee], index) => {
+                        // Vary attendance by section for realism
+                        let sectionRate = attendanceRate;
+                        if (employee.section.includes('Admin')) {
+                            sectionRate = attendanceRate + 0.05; // Admin sections slightly higher
+                        } else if (employee.section.includes('Fund')) {
+                            sectionRate = attendanceRate - 0.02; // Fund sections slightly lower
+                        }
+
+                        // Random attendance based on rate
+                        const isPresent = Math.random() < sectionRate;
+
+                        // Generate random times for present employees
+                        let inTime = '-';
+                        let outTime = '-';
+                        let duration = '-';
+
+                        if (isPresent) {
+                            // In time: 9:00 AM to 10:30 AM
+                            const inHour = 9 + Math.floor(Math.random() * 2);
+                            const inMinute = Math.floor(Math.random() * 60);
+                            inTime = `${String(inHour).padStart(2, '0')}:${String(inMinute).padStart(2, '0')}`;
+
+                            // Out time: 5:00 PM to 7:00 PM
+                            const outHour = 17 + Math.floor(Math.random() * 3);
+                            const outMinute = Math.floor(Math.random() * 60);
+                            outTime = `${String(outHour).padStart(2, '0')}:${String(outMinute).padStart(2, '0')}`;
+
+                            // Calculate duration
+                            const inMinutes = inHour * 60 + inMinute;
+                            const outMinutes = outHour * 60 + outMinute;
+                            const durationMinutes = outMinutes - inMinutes;
+                            const hours = Math.floor(durationMinutes / 60);
+                            const minutes = durationMinutes % 60;
+                            duration = `${hours}h ${minutes}m`;
+                        }
+
+                        attendanceRecords.push({
+                            slNo: index + 1,
+                            attendanceId: attendanceId,
+                            name: employee.name,
+                            designation: employee.designation,
+                            section: employee.section,
+                            group: employee.group,
+                            divisionUnits: '',
+                            mappedSection: employee.section,
+                            status: isPresent ? 'Marked Attendance' : 'Not Marked Attendance',
+                            inTime: inTime,
+                            outTime: outTime,
+                            duration: duration
+                        });
+
+                        if (isPresent) totalPresentCount++;
+                    });
+
+                    // Save to storage
+                    await StorageManager.saveAttendance(dateStr, attendanceRecords);
+                    totalRecordsGenerated += attendanceRecords.length;
+                    daysProcessed++;
+
+                    // Update progress
+                    const progress = (daysProcessed / totalDays) * 100;
+                    progressFill.style.width = progress + '%';
+                    statusMessage.textContent = `Generating day ${daysProcessed} of ${totalDays}...`;
+
+                    console.log(`Generated ${attendanceRecords.length} records for ${dateStr}`);
+                }
+
+                // Success!
+                progressFill.style.width = '100%';
+                statusMessage.className = 'status-message success';
+                statusMessage.textContent = `✅ Successfully generated ${totalDays} days of attendance data!`;
+
+                // Show stats
+                const avgAttendancePercent = ((totalPresentCount / totalRecordsGenerated) * 100).toFixed(1);
+                document.getElementById('daysGenerated').textContent = totalDays;
+                document.getElementById('totalRecords').textContent = totalRecordsGenerated.toLocaleString();
+                document.getElementById('avgAttendance').textContent = avgAttendancePercent + '%';
+                statsDisplay.style.display = 'grid';
+
+                console.log('Sample data generation completed successfully!');
+                console.log(`Total days: ${totalDays}`);
+                console.log(`Total records: ${totalRecordsGenerated}`);
+                console.log(`Average attendance: ${avgAttendancePercent}%`);
+
+            } catch (error) {
+                console.error('Error generating sample data:', error);
+                statusMessage.className = 'status-message error';
+                statusMessage.textContent = '❌ Error: ' + error.message;
+            } finally {
+                generateBtn.disabled = false;
+            }
+        }
+
+        // Set default dates on load
+        window.addEventListener('DOMContentLoaded', () => {
+            const today = new Date();
+            const thirtyDaysAgo = new Date(today);
+            thirtyDaysAgo.setDate(today.getDate() - 30);
+
+            document.getElementById('endDate').value = today.toISOString().split('T')[0];
+            document.getElementById('startDate').value = thirtyDaysAgo.toISOString().split('T')[0];
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+// ========================================
+// Configuration File
+// Contains login credentials and system settings
+// ========================================
+
+const CONFIG = {
+    // Login Credentials (45 unique users)
+    credentials: {
+        // Super Admin - Access to all data
+        'admin': { password: 'admin@2024', role: 'admin', name: 'Administrator' },
+
+        // Nodal Officer - Can upload data and view analytics
+        'nodal': { password: 'nodal@2024', role: 'nodal', name: 'Nodal Officer' },
+
+        // Branch Officers (BOs) - 39 BOs as mentioned
+        // These will be populated from the Excel file "List of BOs"
+        // For now, creating placeholder BOs
+        'bo1': { password: 'bo@2024', role: 'bo', name: 'BO - Admin I', sections: ['Admin-I'] },
+        'bo2': { password: 'bo@2024', role: 'bo', name: 'BO - Admin II', sections: ['Admin-II'] },
+        'bo3': { password: 'bo@2024', role: 'bo', name: 'BO - Fund I', sections: ['Fund-I'] },
+        'bo4': { password: 'bo@2024', role: 'bo', name: 'BO - Fund II', sections: ['Fund-II'] },
+        'bo5': { password: 'bo@2024', role: 'bo', name: 'BO - Accounts I', sections: ['AC-I'] },
+        'bo6': { password: 'bo@2024', role: 'bo', name: 'BO - Accounts II', sections: ['AC-II'] },
+        'bo7': { password: 'bo@2024', role: 'bo', name: 'BO - Accounts III', sections: ['AC-III'] },
+
+        // Additional 32 BOs will be auto-generated from Excel data
+        // Users can customize credentials by editing this file
+    },
+
+    // Group to Section Mapping
+    groupMapping: {
+        'Admin': ['Admin-I', 'Admin-II'],
+        'Fund': ['Fund-I', 'Fund-II'],
+        'Accounts': ['AC-I', 'AC-II', 'AC-III']
+    },
+
+    // Division/Unit to Group Mapping (for attendance data)
+    divisionMapping: {
+        'Administration Group (agaewb)': 'Admin',
+        'Fund Group (agaewb)': 'Fund',
+        'Accounts Group (agaewb)': 'Accounts',
+        'Pension Group (agaewb)': 'Pension', // Will need to be mapped
+        'Others (ag Secretariat, Iad, Welfare, O&m) (agaewb)': 'Others'
+    },
+
+    // Application Settings
+    settings: {
+        dateFormat: 'DD-MM-YYYY',
+        defaultDate: new Date().toISOString().split('T')[0],
+        itemsPerPage: 50,
+        chartColors: {
+            primary: '#6366f1',
+            secondary: '#8b5cf6',
+            success: '#10b981',
+            danger: '#ef4444',
+            warning: '#f59e0b',
+            info: '#3b82f6'
+        }
+    },
+
+    // Storage Keys
+    storageKeys: {
+        currentUser: 'ams_current_user',
+        attendanceData: 'ams_attendance_data',
+        employeeData: 'ams_employee_data',
+        uploadHistory: 'ams_upload_history',
+        boMapping: 'ams_bo_mapping'
+    }
+};
+
+// Helper function to add custom BOs
+function addCustomBO(username, password, name, sections) {
+    CONFIG.credentials[username] = {
+        password: password,
+        role: 'bo',
+        name: name,
+        sections: sections
+    };
+}
+
+// Helper function to get all sections for a group
+function getSectionsForGroup(group) {
+    return CONFIG.groupMapping[group] || [];
+}
+
+// Helper function to map division to group
+function mapDivisionToGroup(division) {
+    return CONFIG.divisionMapping[division] || 'Others';
+}

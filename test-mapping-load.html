@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Test Mapping Load</title>
+</head>
+
+<body>
+    <h1>Testing ATTENDANCE_ID_MAPPING</h1>
+    <div id="result"></div>
+
+    <script src="employee-mapping.js"></script>
+    <script>
+        const result = document.getElementById('result');
+
+        try {
+            // Test 1: Check if ATTENDANCE_ID_MAPPING is defined
+            if (typeof ATTENDANCE_ID_MAPPING === 'undefined') {
+                result.innerHTML += '<p style="color: red;">❌ ATTENDANCE_ID_MAPPING is NOT defined!</p>';
+            } else {
+                result.innerHTML += '<p style="color: green;">✓ ATTENDANCE_ID_MAPPING is defined</p>';
+                result.innerHTML += '<p>Total employees: ' + Object.keys(ATTENDANCE_ID_MAPPING).length + '</p>';
+            }
+
+            // Test 2: Check if SECTION_ATTENDANCE_IDS is defined
+            if (typeof SECTION_ATTENDANCE_IDS === 'undefined') {
+                result.innerHTML += '<p style="color: red;">❌ SECTION_ATTENDANCE_IDS is NOT defined!</p>';
+            } else {
+                result.innerHTML += '<p style="color: green;">✓ SECTION_ATTENDANCE_IDS is defined</p>';
+                result.innerHTML += '<p>Total sections: ' + Object.keys(SECTION_ATTENDANCE_IDS).length + '</p>';
+            }
+
+            // Test 3: Test getEmployeeByAttendanceId function
+            const testEmployee = getEmployeeByAttendanceId('394');
+            if (testEmployee) {
+                result.innerHTML += '<p style="color: green;">✓ getEmployeeByAttendanceId works</p>';
+                result.innerHTML += '<p>Test ID 394 → ' + testEmployee.name + ' (' + testEmployee.section + ')</p>';
+            } else {
+                result.innerHTML += '<p style="color: red;">❌ getEmployeeByAttendanceId failed</p>';
+            }
+
+            // Test 4: Test getSectionByAttendanceId function
+            const section = getSectionByAttendanceId('394');
+            if (section) {
+                result.innerHTML += '<p style="color: green;">✓ getSectionByAttendanceId works → ' + section + '</p>';
+            } else {
+                result.innerHTML += '<p style="color: red;">❌ getSectionByAttendanceId failed</p>';
+            }
+
+        } catch (error) {
+            result.innerHTML += '<p style="color: red;">❌ Error: ' + error.message + '</p>';
+        }
+    </script>
+</body>
+
+</html>

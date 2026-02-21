@@ -1,0 +1,720 @@
+{
+  "total_bos": 39,
+  "total_employees": 845,
+  "mapped_employees": 754,
+  "unmapped_employees": 91,
+  "bos": [
+    {
+      "bo_num": 1,
+      "login_id": "bo1",
+      "name": "Tapas Kumar Dhar, Sr.AO",
+      "group": null,
+      "sections_assigned_raw": [
+        "Secreatry to the AG",
+        "O&M"
+      ],
+      "sections_mapped": [
+        "Capital & Loan Compilation",
+        "PAO (Compilation & Computerisation)",
+        "Pension Compilation",
+        "RECORD COMPUTER CELL",
+        "TA-I  (VR ROOM)"
+      ],
+      "employee_count": 0
+    },
+    {
+      "bo_num": 2,
+      "login_id": "bo2",
+      "name": "Sujit Kumar Sen, Sr.AO(IAO)",
+      "group": null,
+      "sections_assigned_raw": [
+        "Internal Audit Departent(IAD-I",
+        "IAD-II",
+        "IAD-III",
+        "IAD-IV",
+        "IAD-V)"
+      ],
+      "sections_mapped": [
+        "IAD-I",
+        "IAD-II",
+        "IAD-III",
+        "IAD-IV",
+        "IAD-V"
+      ],
+      "employee_count": 21
+    },
+    {
+      "bo_num": 3,
+      "login_id": "bo3",
+      "name": "Satyadip Chattopadhyay, Sr.AO",
+      "group": "Administration Group",
+      "sections_assigned_raw": [
+        "Admn-I",
+        "CR Cell"
+      ],
+      "sections_mapped": [
+        "Admn-I",
+        "Admn-II",
+        "Admn-III",
+        "BO (Admn-I, CR Cell)",
+        "BO (Admn-II,Admn-III)",
+        "CR Cell"
+      ],
+      "employee_count": 4
+    },
+    {
+      "bo_num": 4,
+      "login_id": "bo4",
+      "name": "Supriyo Banerjee, Sr.AO",
+      "group": "Administration Group",
+      "sections_assigned_raw": [
+        "DDO",
+        "Admn-II",
+        "Admn-III",
+        "Nodal Officer of e-HRMS"
+      ],
+      "sections_mapped": [
+        "Admn-I",
+        "Admn-II",
+        "Admn-III",
+        "BO (Admn-II,Admn-III)"
+      ],
+      "employee_count": 56
+    },
+    {
+      "bo_num": 5,
+      "login_id": "bo5",
+      "name": "Partha Saha, Sr.AO",
+      "group": "Administration Group",
+      "sections_assigned_raw": [
+        "FMS & Record (Record-I",
+        "Record-III",
+        "Caretaking Establishment",
+        "Record Computer Cell",
+        "Record Library)"
+      ],
+      "sections_mapped": [
+        "CARETAKING ESTABLISHMENT",
+        "RECORD COMPUTER CELL",
+        "RECORD LIBRARY",
+        "RECORD-I",
+        "RECORD-III"
+      ],
+      "employee_count": 62
+    },
+    {
+      "bo_num": 6,
+      "login_id": "bo6",
+      "name": "Partha Das, Sr.AO",
+      "group": "Administration Group",
+      "sections_assigned_raw": [
+        "Training & Exam"
+      ],
+      "sections_mapped": [
+        "AM",
+        "Training & Exam"
+      ],
+      "employee_count": 0
+    },
+    {
+      "bo_num": 7,
+      "login_id": "bo7",
+      "name": "Sanat Sen, Sr.AO",
+      "group": "Administration Group",
+      "sections_assigned_raw": [
+        "Legal Cell"
+      ],
+      "sections_mapped": [
+        "BO (LEGAL CELL)",
+        "LEGAL CELL"
+      ],
+      "employee_count": 13
+    },
+    {
+      "bo_num": 8,
+      "login_id": "bo8",
+      "name": "Kousik Kumar Dutta, Sr.AO",
+      "group": "Administration Group",
+      "sections_assigned_raw": [
+        "Digitization Cell"
+      ],
+      "sections_mapped": [
+        "BO (DIGITIZATION CELL)",
+        "DIGITIZATION CELL"
+      ],
+      "employee_count": 38
+    },
+    {
+      "bo_num": 9,
+      "login_id": "bo9",
+      "name": "Krishna Chandra Kundu, Sr.AO",
+      "group": "Administration Group",
+      "sections_assigned_raw": [
+        "ITSC & ITSC-II"
+      ],
+      "sections_mapped": [
+        "BO (ITSC & ITSC-II)",
+        "ITSC",
+        "ITSC-II"
+      ],
+      "employee_count": 12
+    },
+    {
+      "bo_num": 10,
+      "login_id": "bo10",
+      "name": "Rana Banerjee, Sr.AO",
+      "group": "Administration Group",
+      "sections_assigned_raw": [
+        "Welfare"
+      ],
+      "sections_mapped": [
+        "BO (WELFARE)",
+        "WELFARE"
+      ],
+      "employee_count": 12
+    },
+    {
+      "bo_num": 11,
+      "login_id": "bo11",
+      "name": "Arun Kumar, Asst. Director(OL)",
+      "group": "Administration Group",
+      "sections_assigned_raw": [
+        "Rajbhasa Section"
+      ],
+      "sections_mapped": [
+        "RAJBHASA SECTION"
+      ],
+      "employee_count": 6
+    },
+    {
+      "bo_num": 12,
+      "login_id": "bo12",
+      "name": "Bijoy Surin, Sr.AO",
+      "group": "Administration Group",
+      "sections_assigned_raw": [
+        "Awaiting posting"
+      ],
+      "sections_mapped": [],
+      "employee_count": 0
+    },
+    {
+      "bo_num": 13,
+      "login_id": "bo13",
+      "name": "Subhendu Das, Sr.AO",
+      "group": "Accounts Group",
+      "sections_assigned_raw": [
+        "AM",
+        "TA-I",
+        "TA-II",
+        "TA-III",
+        "TA-IV"
+      ],
+      "sections_mapped": [
+        "AM",
+        "TA-I",
+        "TA-I  (VR ROOM)",
+        "TA-II",
+        "TA-III",
+        "TA-IV",
+        "Training & Exam"
+      ],
+      "employee_count": 44
+    },
+    {
+      "bo_num": 14,
+      "login_id": "bo14",
+      "name": "Debatosh Pramanik, Sr.AO",
+      "group": "Accounts Group",
+      "sections_assigned_raw": [
+        "Book-I",
+        "AP",
+        "SNA"
+      ],
+      "sections_mapped": [
+        "AP",
+        "BOOK-I",
+        "BOOK-II",
+        "BOOK-III",
+        "Capital & Loan Compilation",
+        "SNA"
+      ],
+      "employee_count": 5
+    },
+    {
+      "bo_num": 15,
+      "login_id": "bo15",
+      "name": "Subrata Roy, Sr.AO",
+      "group": "Accounts Group",
+      "sections_assigned_raw": [
+        "Book-II",
+        "AC-I",
+        "AC-II",
+        "AC-III",
+        "Labour Co-operation A/cs"
+      ],
+      "sections_mapped": [
+        "AC-I",
+        "AC-II",
+        "AC-III",
+        "BOOK-I",
+        "BOOK-II",
+        "BOOK-III",
+        "Labour Co-operation A/cs",
+        "Pension Facilitation Cell"
+      ],
+      "employee_count": 23
+    },
+    {
+      "bo_num": 16,
+      "login_id": "bo16",
+      "name": "Sujan Banerjee, Sr.AO",
+      "group": "Accounts Group",
+      "sections_assigned_raw": [
+        "SS A/cs",
+        "Medical-I",
+        "Medical-II",
+        "Medical-III",
+        "Capital & Loan Compilation"
+      ],
+      "sections_mapped": [
+        "AP",
+        "Capital & Loan Compilation",
+        "Medical-I",
+        "Medical-II",
+        "Medical-III",
+        "SS A/cs"
+      ],
+      "employee_count": 29
+    },
+    {
+      "bo_num": 17,
+      "login_id": "bo17",
+      "name": "Subhradeep Bhattacherya, Sr.AO",
+      "group": "Accounts Group",
+      "sections_assigned_raw": [
+        "Budget"
+      ],
+      "sections_mapped": [
+        "BUDGET"
+      ],
+      "employee_count": 5
+    },
+    {
+      "bo_num": 18,
+      "login_id": "bo18",
+      "name": "Sujit Mondal, Sr.AO",
+      "group": "Accounts Group",
+      "sections_assigned_raw": [
+        "WM"
+      ],
+      "sections_mapped": [
+        "WM"
+      ],
+      "employee_count": 12
+    },
+    {
+      "bo_num": 19,
+      "login_id": "bo19",
+      "name": "Biplab Roy, Sr.AO",
+      "group": "Accounts Group",
+      "sections_assigned_raw": [
+        "Internal NRA Cell",
+        "Vetting if IRs",
+        "Book-III"
+      ],
+      "sections_mapped": [
+        "BOOK-I",
+        "BOOK-II",
+        "BOOK-III",
+        "Internal NRA Cell"
+      ],
+      "employee_count": 32
+    },
+    {
+      "bo_num": 20,
+      "login_id": "bo20",
+      "name": "Asim Kumar Majumder",
+      "group": "Accounts Group",
+      "sections_assigned_raw": [
+        "Pension Compilation",
+        "General Admn. A/cs R&RD A/cs",
+        "Misc. A/cs"
+      ],
+      "sections_mapped": [
+        "General Admn. A/cs",
+        "Misc. A/cs",
+        "Pension Compilation",
+        "R&RD A/cs"
+      ],
+      "employee_count": 20
+    },
+    {
+      "bo_num": 21,
+      "login_id": "bo21",
+      "name": "Birendra Prasad",
+      "group": "Accounts Group",
+      "sections_assigned_raw": [
+        "P.W. Estt A/cs",
+        "PH A/cs",
+        "Police A/cs",
+        "Industry & LR A/cs"
+      ],
+      "sections_mapped": [
+        "Industry & LR A/cs",
+        "P.W. Estt A/cs",
+        "PH A/cs",
+        "Police A/cs"
+      ],
+      "employee_count": 18
+    },
+    {
+      "bo_num": 22,
+      "login_id": "bo22",
+      "name": "Jitendra Nath Das",
+      "group": "Accounts Group",
+      "sections_assigned_raw": [
+        "Pre-Check-I",
+        "Pre-Check-II",
+        "PAO(A) Pension",
+        "PAO(Special Cell)"
+      ],
+      "sections_mapped": [
+        "PAO(A) Pension",
+        "PAO(Special Cell)",
+        "Pre-Check-I",
+        "Pre-Check-II"
+      ],
+      "employee_count": 24
+    },
+    {
+      "bo_num": 23,
+      "login_id": "bo23",
+      "name": "Rebati Ranjan Podder",
+      "group": "Accounts Group",
+      "sections_assigned_raw": [
+        "PAO (Compilation & Computerisation)",
+        "PAO(Cash)",
+        "PAO(NPS)",
+        "PAO(Fund)"
+      ],
+      "sections_mapped": [
+        "PAO (Compilation & Computerisation)",
+        "PAO(Cash)",
+        "PAO(Fund) ",
+        "PAO(NPS)"
+      ],
+      "employee_count": 20
+    },
+    {
+      "bo_num": 24,
+      "login_id": "bo24",
+      "name": "Hiralal Barman",
+      "group": "Accounts Group",
+      "sections_assigned_raw": [
+        "Book(W)",
+        "Works A/cs-I",
+        "Works A/cs-II",
+        "Works A/cs-IIII",
+        "Works A/cs-IV",
+        "Forest A/cs",
+        "GAD Cell",
+        "BS-I",
+        "BS-II",
+        "BS-III",
+        "BS-IV & BS-V"
+      ],
+      "sections_mapped": [
+        "BOOK(W)",
+        "BS-I",
+        "BS-II",
+        "Forest A/cs",
+        "GAD Cell",
+        "Works A/cs-I",
+        "Works A/cs-II",
+        "Works A/cs-IIII",
+        "Works A/cs-IV"
+      ],
+      "employee_count": 26
+    },
+    {
+      "bo_num": 25,
+      "login_id": "bo25",
+      "name": "Avijit Sarkar",
+      "group": "Fund Group",
+      "sections_assigned_raw": [
+        "Fund Misc",
+        "FFC",
+        "FDC",
+        "Fund-I",
+        "Fund-V",
+        "Fund-VIII"
+      ],
+      "sections_mapped": [
+        "BO (CGF, Fund A/cs., Fund-VII, XI, XII, IV)",
+        "BO (Fund Misc., FFC, FDC, Fund-I, V, VIII)",
+        "BO (Fund-II, III, XV, XVII, IX)",
+        "BO (Fund-VI, XIII, XIV,XVI, X)",
+        "FDC",
+        "FUND MISC",
+        "FUND-I",
+        "FUND-II",
+        "FUND-III",
+        "FUND-IV",
+        "FUND-IX",
+        "FUND-V",
+        "FUND-VI",
+        "FUND-VII",
+        "FUND-VIII"
+      ],
+      "employee_count": 22
+    },
+    {
+      "bo_num": 26,
+      "login_id": "bo26",
+      "name": "Lakshmi Kanta Mandi",
+      "group": "Fund Group",
+      "sections_assigned_raw": [
+        "CGF",
+        "Fund A/cs",
+        "Fund-VII",
+        "Fund-XI",
+        "Fund-XII",
+        "Fund-IV"
+      ],
+      "sections_mapped": [
+        "BO (CGF, Fund A/cs., Fund-VII, XI, XII, IV)",
+        "CGF",
+        "FUND A/CS",
+        "FUND-I",
+        "FUND-IV",
+        "FUND-V",
+        "FUND-VI",
+        "FUND-VII",
+        "FUND-VIII",
+        "FUND-X",
+        "FUND-XI",
+        "FUND-XII",
+        "FUND-XIII",
+        "FUND-XIV"
+      ],
+      "employee_count": 17
+    },
+    {
+      "bo_num": 27,
+      "login_id": "bo27",
+      "name": "Debasish Chakraborty",
+      "group": "Fund Group",
+      "sections_assigned_raw": [
+        "Fund-VI",
+        "Fund-XIII",
+        "Fund-XIV",
+        "Fund-XVI",
+        "Fund-X"
+      ],
+      "sections_mapped": [
+        "BO (CGF, Fund A/cs., Fund-VII, XI, XII, IV)",
+        "BO (Fund-VI, XIII, XIV,XVI, X)",
+        "FUND-V",
+        "FUND-VI",
+        "FUND-VII",
+        "FUND-VIII",
+        "FUND-X",
+        "FUND-XI",
+        "FUND-XII",
+        "FUND-XIII",
+        "FUND-XIV",
+        "FUND-XV",
+        "FUND-XVI",
+        "FUND-XVII"
+      ],
+      "employee_count": 57
+    },
+    {
+      "bo_num": 28,
+      "login_id": "bo28",
+      "name": "Nandadulal Sadhukhan",
+      "group": "Fund Group",
+      "sections_assigned_raw": [
+        "Fund-II",
+        "Fund-III",
+        "Fund-XV",
+        "Fund-XVII",
+        "Fund-IX"
+      ],
+      "sections_mapped": [
+        "BO (Fund-II, III, XV, XVII, IX)",
+        "FUND-I",
+        "FUND-II",
+        "FUND-III",
+        "FUND-IX",
+        "FUND-X",
+        "FUND-XV",
+        "FUND-XVI",
+        "FUND-XVII"
+      ],
+      "employee_count": 54
+    },
+    {
+      "bo_num": 29,
+      "login_id": "bo29",
+      "name": "Shri Raja Gangopadhyay,     Sr. A.O.",
+      "group": "Pension Group",
+      "sections_assigned_raw": [
+        "Pension Co-ordination"
+      ],
+      "sections_mapped": [
+        "Pension Co-ordination"
+      ],
+      "employee_count": 13
+    },
+    {
+      "bo_num": 30,
+      "login_id": "bo30",
+      "name": "Shri Anil Kumar Nayar,           Sr. A.O.",
+      "group": "Pension Group",
+      "sections_assigned_raw": [
+        "Pension EDP"
+      ],
+      "sections_mapped": [
+        "Pension EDP"
+      ],
+      "employee_count": 7
+    },
+    {
+      "bo_num": 31,
+      "login_id": "bo31",
+      "name": "Shri P. Sandip Menon,                         Sr. A.O.",
+      "group": "Pension Group",
+      "sections_assigned_raw": [
+        "Pension-IX"
+      ],
+      "sections_mapped": [
+        "Pension-I",
+        "Pension-IX"
+      ],
+      "employee_count": 0
+    },
+    {
+      "bo_num": 32,
+      "login_id": "bo32",
+      "name": "Shri Indrajit Sarkar,                     Sr. A.O.",
+      "group": "Pension Group",
+      "sections_assigned_raw": [
+        "Pension-IV"
+      ],
+      "sections_mapped": [
+        "Pension-I",
+        "Pension-IV"
+      ],
+      "employee_count": 0
+    },
+    {
+      "bo_num": 33,
+      "login_id": "bo33",
+      "name": "Shri Ayan Dutta, Sr. A.O.",
+      "group": "Pension Group",
+      "sections_assigned_raw": [
+        "Pension-X"
+      ],
+      "sections_mapped": [
+        "Pension-X",
+        "Pension-XI",
+        "Pension-XII",
+        "Pension-XIII"
+      ],
+      "employee_count": 27
+    },
+    {
+      "bo_num": 34,
+      "login_id": "bo34",
+      "name": "Shri Subrata Datta, \nSr. A.O.",
+      "group": "Pension Group",
+      "sections_assigned_raw": [
+        "Pension-VII"
+      ],
+      "sections_mapped": [
+        "Pension-V",
+        "Pension-VI",
+        "Pension-VII",
+        "Pension-VIII"
+      ],
+      "employee_count": 0
+    },
+    {
+      "bo_num": 35,
+      "login_id": "bo35",
+      "name": "Shri Debashis Roy, \nSr. A.O.",
+      "group": "Pension Group",
+      "sections_assigned_raw": [
+        "Pension-III"
+      ],
+      "sections_mapped": [
+        "Pension-I",
+        "Pension-II",
+        "Pension-III"
+      ],
+      "employee_count": 0
+    },
+    {
+      "bo_num": 36,
+      "login_id": "bo36",
+      "name": "Shri Sambhu Nath Basak, \nSr. A.O.",
+      "group": "Pension Group",
+      "sections_assigned_raw": [
+        "Pension Cell-I"
+      ],
+      "sections_mapped": [
+        "Pension Cell-I",
+        "Pension Cell-II",
+        "Pension Cell-III"
+      ],
+      "employee_count": 17
+    },
+    {
+      "bo_num": 37,
+      "login_id": "bo37",
+      "name": "Shri Asish Bhattacharjee,             Sr. A.O.",
+      "group": "Pension Group",
+      "sections_assigned_raw": [
+        "Pension-V"
+      ],
+      "sections_mapped": [
+        "Pension-V",
+        "Pension-VI",
+        "Pension-VII",
+        "Pension-VIII"
+      ],
+      "employee_count": 24
+    },
+    {
+      "bo_num": 38,
+      "login_id": "bo38",
+      "name": "Shri Pradip Kumar Mondal,  Sr. A.O.",
+      "group": "Pension Group",
+      "sections_assigned_raw": [
+        "Pension Payment"
+      ],
+      "sections_mapped": [
+        "Pension Payment "
+      ],
+      "employee_count": 6
+    },
+    {
+      "bo_num": 39,
+      "login_id": "bo39",
+      "name": "Shri Mrinal Kanti Mitra,       Sr. A.O.",
+      "group": "Pension Group",
+      "sections_assigned_raw": [
+        "Pension-I"
+      ],
+      "sections_mapped": [
+        "Pension-I",
+        "Pension-II",
+        "Pension-III",
+        "Pension-IV",
+        "Pension-IX"
+      ],
+      "employee_count": 28
+    }
+  ]
+}

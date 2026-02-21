@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backend URL Configuration Example</title>
+</head>
+
+<body>
+    <!-- 
+        CLOUD DEPLOYMENT CONFIGURATION
+        ===============================
+        
+        If you are deploying the frontend and backend to DIFFERENT domains/servers,
+        you MUST configure the backend URL before loading the application.
+        
+        Instructions:
+        1. Copy the script block below
+        2. Paste it in index.html BEFORE the api-client.js script tag (around line 667)
+        3. Replace 'YOUR_BACKEND_URL_HERE' with your actual backend server URL
+        
+        Example URLs:
+        - Railway: https://your-app.up.railway.app/api
+        - Heroku: https://your-app.herokuapp.com/api
+        - VPS: https://api.yourdomain.com/api
+        - Custom: https://your-backend-server.com/api
+        
+        IMPORTANT: The URL should end with '/api' (without trailing slash)
+    -->
+
+    <script>
+        // Configure backend URL for cloud deployment
+        // Replace 'YOUR_BACKEND_URL_HERE' with your actual backend server URL
+        window.BACKEND_URL = 'YOUR_BACKEND_URL_HERE';
+
+        // Examples (uncomment and modify one):
+        // window.BACKEND_URL = 'https://your-app.up.railway.app/api';
+        // window.BACKEND_URL = 'https://your-app.herokuapp.com/api';
+        // window.BACKEND_URL = 'https://api.yourdomain.com/api';
+    </script>
+
+    <!--
+        THEN add this script tag in index.html AFTER the above configuration
+        and BEFORE any other application scripts:
+        
+        <script src="api-client.js"></script>
+    -->
+
+    <h1>Configuration Template</h1>
+    <p>This file is just an example. See the HTML source for instructions.</p>
+</body>
+
+</html>

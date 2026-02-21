@@ -1,0 +1,417 @@
+{
+  "bo_users": {
+    "bo1": {
+      "bo_number": 1,
+      "name": "Tapas Kumar Dhar, Sr.AO",
+      "assigned_sections": [
+        "Secreatry to the AG, O&M"
+      ],
+      "actual_sections_in_data": [],
+      "people_count": 0
+    },
+    "bo2": {
+      "bo_number": 2,
+      "name": "Sujit Kumar Sen, Sr.AO(IAO)",
+      "assigned_sections": [
+        "Internal Audit Departent(IAD-I, IAD-II, IAD-III, IAD-IV, IAD-V)"
+      ],
+      "actual_sections_in_data": [],
+      "people_count": 0
+    },
+    "bo3": {
+      "bo_number": 3,
+      "name": "Satyadip Chattopadhyay, Sr.AO",
+      "assigned_sections": [
+        "Admin-I, CR Cell"
+      ],
+      "actual_sections_in_data": [],
+      "people_count": 0
+    },
+    "bo4": {
+      "bo_number": 4,
+      "name": "Supriyo Banerjee, Sr.AO",
+      "assigned_sections": [
+        "DDO,Admin-II, Admn.III, Nodal Officer of e-HRMS"
+      ],
+      "actual_sections_in_data": [],
+      "people_count": 0
+    },
+    "bo5": {
+      "bo_number": 5,
+      "name": "Partha Saha, Sr.AO",
+      "assigned_sections": [
+        "FMS & Record (Record-I, Record-III, Record Caretaking, Record Computer Cell, Record Library)"
+      ],
+      "actual_sections_in_data": [
+        "RECORD COMPUTER CELL",
+        "RECORD LIBRARY",
+        "RECORD-I",
+        "RECORD-III"
+      ],
+      "people_count": 54
+    },
+    "bo6": {
+      "bo_number": 6,
+      "name": "Partha Das, Sr.AO",
+      "assigned_sections": [
+        "Training & Exam"
+      ],
+      "actual_sections_in_data": [
+        "TRAINING"
+      ],
+      "people_count": 7
+    },
+    "bo7": {
+      "bo_number": 7,
+      "name": "Sanat Sen, Sr.AO",
+      "assigned_sections": [
+        "Legal Cell"
+      ],
+      "actual_sections_in_data": [
+        "LEGAL CELL"
+      ],
+      "people_count": 13
+    },
+    "bo8": {
+      "bo_number": 8,
+      "name": "Kousik Kumar Dutta, Sr.AO",
+      "assigned_sections": [
+        "Digitization Cell"
+      ],
+      "actual_sections_in_data": [
+        "Digitization Cell"
+      ],
+      "people_count": 38
+    },
+    "bo9": {
+      "bo_number": 9,
+      "name": "Krishna Chandra Kundu, Sr.AO",
+      "assigned_sections": [
+        "ITSC & ITSC-II"
+      ],
+      "actual_sections_in_data": [
+        "ITSC & ITSC-II",
+        "ITSC",
+        "ITSC-II"
+      ],
+      "people_count": 12
+    },
+    "bo10": {
+      "bo_number": 10,
+      "name": "Rana Banerjee, Sr.AO",
+      "assigned_sections": [
+        "Welfare"
+      ],
+      "actual_sections_in_data": [
+        "WELFARE"
+      ],
+      "people_count": 12
+    },
+    "bo11": {
+      "bo_number": 11,
+      "name": "Arun Kumar, Asst. Director(OL)",
+      "assigned_sections": [
+        "Rajbhasa Section"
+      ],
+      "actual_sections_in_data": [
+        "Rajbhasa Section"
+      ],
+      "people_count": 6
+    },
+    "bo12": {
+      "bo_number": 12,
+      "name": "Bijoy Surin, Sr.AO",
+      "assigned_sections": [
+        "Awaiting posting"
+      ],
+      "actual_sections_in_data": [],
+      "people_count": 0
+    },
+    "bo13": {
+      "bo_number": 13,
+      "name": "Subhendu Das, Sr.AO",
+      "assigned_sections": [
+        "AM, TA-I,II,III,IV"
+      ],
+      "actual_sections_in_data": [],
+      "people_count": 0
+    },
+    "bo14": {
+      "bo_number": 14,
+      "name": "Debatosh Pramanik, Sr.AO",
+      "assigned_sections": [
+        "Book-I, AP, SNA"
+      ],
+      "actual_sections_in_data": [],
+      "people_count": 0
+    },
+    "bo15": {
+      "bo_number": 15,
+      "name": "Subrata Roy, Sr.AO",
+      "assigned_sections": [
+        "Book-II, AC-I,II,III, Labour Co-operation A/cs"
+      ],
+      "actual_sections_in_data": [],
+      "people_count": 0
+    },
+    "bo16": {
+      "bo_number": 16,
+      "name": "Sujan Banerjee, Sr.AO",
+      "assigned_sections": [
+        "SS A/cs, Medical-I,II,III, Capital & Loan Compilation"
+      ],
+      "actual_sections_in_data": [],
+      "people_count": 0
+    },
+    "bo17": {
+      "bo_number": 17,
+      "name": "Subhradeep Bhattacherya, Sr.AO",
+      "assigned_sections": [
+        "Budget"
+      ],
+      "actual_sections_in_data": [],
+      "people_count": 0
+    },
+    "bo18": {
+      "bo_number": 18,
+      "name": "Sujit Mondal, Sr.AO",
+      "assigned_sections": [
+        "WM"
+      ],
+      "actual_sections_in_data": [],
+      "people_count": 0
+    },
+    "bo19": {
+      "bo_number": 19,
+      "name": "Biplab Roy, Sr.AO",
+      "assigned_sections": [
+        "Internal NRA Cell, Vetting if IRs,Book-III"
+      ],
+      "actual_sections_in_data": [],
+      "people_count": 0
+    },
+    "bo20": {
+      "bo_number": 20,
+      "name": "Asim Kumar Majumder",
+      "assigned_sections": [
+        "Pension Compilation, General Admn. A/cs R&RD A/cs, Misc. A/cs"
+      ],
+      "actual_sections_in_data": [],
+      "people_count": 0
+    },
+    "bo21": {
+      "bo_number": 21,
+      "name": "Birendra Prasad",
+      "assigned_sections": [
+        "P.W. Estt A/cs, PH A/cs, Police A/cs, Industry & LR A/cs"
+      ],
+      "actual_sections_in_data": [],
+      "people_count": 0
+    },
+    "bo22": {
+      "bo_number": 22,
+      "name": "Jitendra Nath Das",
+      "assigned_sections": [
+        "Pre-Check-I, II, PAO(A) Pension, PAO(Special Cell)"
+      ],
+      "actual_sections_in_data": [],
+      "people_count": 0
+    },
+    "bo23": {
+      "bo_number": 23,
+      "name": "Rebati Ranjan Podder",
+      "assigned_sections": [
+        "PAO (Compilation & Computerisation), PAO(Cash), PAO(NPS), PAO(Fund)"
+      ],
+      "actual_sections_in_data": [],
+      "people_count": 0
+    },
+    "bo24": {
+      "bo_number": 24,
+      "name": "Hiralal Barman",
+      "assigned_sections": [
+        "Book(W), Works A/cs-I,II,III, Works A/cs-IV, Forest A/cs, GAD Cell, BS-I,II,III,IV & V"
+      ],
+      "actual_sections_in_data": [],
+      "people_count": 0
+    },
+    "bo25": {
+      "bo_number": 25,
+      "name": "Avijit Sarkar",
+      "assigned_sections": [
+        "Fund Misc., FFC, FDC, Fund-I, V, VIII"
+      ],
+      "actual_sections_in_data": [],
+      "people_count": 0
+    },
+    "bo26": {
+      "bo_number": 26,
+      "name": "Lakshmi Kanta Mandi",
+      "assigned_sections": [
+        "CGF, Fund A/cs., Fund-VII, XI, XII, IV"
+      ],
+      "actual_sections_in_data": [],
+      "people_count": 0
+    },
+    "bo27": {
+      "bo_number": 27,
+      "name": "Debasish Chakraborty",
+      "assigned_sections": [
+        "Fund-VI, XIII, XIV,XVI, X"
+      ],
+      "actual_sections_in_data": [],
+      "people_count": 0
+    },
+    "bo28": {
+      "bo_number": 28,
+      "name": "Nandadulal Sadhukhan",
+      "assigned_sections": [
+        "Fund-II, III, XV, XVII, IX"
+      ],
+      "actual_sections_in_data": [],
+      "people_count": 0
+    },
+    "bo29": {
+      "bo_number": 29,
+      "name": "Shri Raja Gangopadhyay,     Sr. A.O.",
+      "assigned_sections": [
+        "Pension Co-ordination",
+        "Pension Facilitation Cell"
+      ],
+      "actual_sections_in_data": [],
+      "people_count": 0
+    },
+    "bo30": {
+      "bo_number": 30,
+      "name": "Shri Anil Kumar Nayar,           Sr. A.O.",
+      "assigned_sections": [
+        "Pension EDP",
+        "Pension Receipt & Despatch (PRD)",
+        "Pension Library",
+        "Pension Peripatetic Party"
+      ],
+      "actual_sections_in_data": [],
+      "people_count": 0
+    },
+    "bo31": {
+      "bo_number": 31,
+      "name": "Shri P. Sandip Menon,                         Sr. A.O.",
+      "assigned_sections": [
+        "Pension-IX",
+        "Pension-XI",
+        "Checking and signing of authorities generated through P-SAI in respect of Pen-VII & Pen-X."
+      ],
+      "actual_sections_in_data": [],
+      "people_count": 0
+    },
+    "bo32": {
+      "bo_number": 32,
+      "name": "Shri Indrajit Sarkar,                     Sr. A.O.",
+      "assigned_sections": [
+        "Pension-IV",
+        "Pension-VI",
+        "Pension Custodian Cell",
+        "Checking and signing of authorities generated through P-SAI in respect of Pen-III & Pen-V."
+      ],
+      "actual_sections_in_data": [],
+      "people_count": 0
+    },
+    "bo33": {
+      "bo_number": 33,
+      "name": "Shri Ayan Dutta, Sr. A.O.",
+      "assigned_sections": [
+        "Pension-X",
+        "Pension-XII",
+        "Checking and signing of authorities generated through P-SAI in respect of Pension Cell-I."
+      ],
+      "actual_sections_in_data": [],
+      "people_count": 0
+    },
+    "bo34": {
+      "bo_number": 34,
+      "name": "Shri Subrata Datta, \nSr. A.O.",
+      "assigned_sections": [
+        "Pension-VII",
+        "Pension-XIII",
+        "Checking and signing of authorities generated through P-SAI in respect of Pension Cell-II."
+      ],
+      "actual_sections_in_data": [],
+      "people_count": 0
+    },
+    "bo35": {
+      "bo_number": 35,
+      "name": "Shri Debashis Roy, \nSr. A.O.",
+      "assigned_sections": [
+        "Pension-III",
+        "Pension Cell-III",
+        "Checking & signing of authorities generated through P-SAI in respect of Pen-XI."
+      ],
+      "actual_sections_in_data": [],
+      "people_count": 0
+    },
+    "bo36": {
+      "bo_number": 36,
+      "name": "Shri Sambhu Nath Basak, \nSr. A.O.",
+      "assigned_sections": [
+        "Pension Cell-I",
+        "Pension Cell-II",
+        "Checking & signing of authorities generated through P-SAI in respect of Pen-I & Pen-II."
+      ],
+      "actual_sections_in_data": [],
+      "people_count": 0
+    },
+    "bo37": {
+      "bo_number": 37,
+      "name": "Shri Asish Bhattacharjee,             Sr. A.O.",
+      "assigned_sections": [
+        "Pension-V",
+        "Pension-VIII",
+        "Checking and signing of authorities generated through P-SAI in respect of Pen-XII & Pen-XIII."
+      ],
+      "actual_sections_in_data": [],
+      "people_count": 0
+    },
+    "bo38": {
+      "bo_number": 38,
+      "name": "Shri Pradip Kumar Mondal,  Sr. A.O.",
+      "assigned_sections": [
+        "Pension Payment",
+        "Pension Pre-Audit",
+        "Checking & signing of authorities generated through P-SAI in respect of Pen-VIII & Pen-IX."
+      ],
+      "actual_sections_in_data": [],
+      "people_count": 0
+    },
+    "bo39": {
+      "bo_number": 39,
+      "name": "Shri Mrinal Kanti Mitra,       Sr. A.O.",
+      "assigned_sections": [
+        "Pension-I",
+        "Pension-II",
+        "Checking and signing of authorities generated through P-SAI in respect of Pension Cell-III."
+      ],
+      "actual_sections_in_data": [],
+      "people_count": 0
+    }
+  },
+  "section_to_bo": {
+    "RECORD-III": 5,
+    "ITSC-II": 9,
+    "ITSC": 9,
+    "TRAINING": 6,
+    "Rajbhasa Section": 11,
+    "ITSC & ITSC-II": 9,
+    "RECORD COMPUTER CELL": 5,
+    "Digitization Cell": 8,
+    "WELFARE": 10,
+    "RECORD LIBRARY": 5,
+    "RECORD-I": 5,
+    "LEGAL CELL": 7
+  },
+  "statistics": {
+    "total_bos": 39,
+    "total_people": 215,
+    "mapped_people": 142,
+    "unmapped_people": 73
+  }
+}

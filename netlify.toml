@@ -1,0 +1,32 @@
+# Netlify Configuration for Attendance Management System
+# This deploys the FRONTEND ONLY
+
+[build]
+  # No build command needed - static site
+  publish = "."
+  
+  # Ignore server directory (backend won't be deployed here)
+  ignore = "server/**"
+
+# Redirect rules (optional - for SPA routing)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = false
+  
+  # Don't apply redirect to API calls or static assets
+  conditions = {Role = ["!api"]}
+
+# Headers for security
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Exclude server files from deployment
+[build.ignore]
+  paths = ["server/**/*"]

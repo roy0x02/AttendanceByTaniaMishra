@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Filter Debug</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .debug-section {
+            background: #f5f5f5;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        pre {
+            background: #333;
+            color: #0f0;
+            padding: 10px;
+            border-radius: 3px;
+            overflow-x: auto;
+        }
+
+        button {
+            background: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        button:hover {
+            background: #45a049;
+        }
+
+        .warning {
+            color: #ff6b6b;
+            font-weight: bold;
+        }
+
+        .success {
+            color: #51cf66;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🔍 Custom Filter Debug Tool</h1>
+
+    <div class="debug-section">
+        <h3>Step 1: Check if filters exist in localStorage</h3>
+        <button onclick="checkFilters()">Check Stored Filters</button>
+        <div id="filterCheck"></div>
+    </div>
+
+    <div class="debug-section">
+        <h3>Step 2: Test specific employee filter</h3>
+        <label>Date (YYYY-MM-DD): <input type="date" id="testDate" value="2026-01-15"></label><br><br>
+        <label>Attendance ID: <input type="text" id="testAttendanceId" placeholder="e.g., WBKLE12345"></label><br><br>
+        <button onclick="testFilter()">Test Filter</button>
+        <div id="filterTest"></div>
+    </div>
+
+    <div class="debug-section">
+        <h3>Step 3: Check documents</h3>
+        <button onclick="checkDocuments()">Check Stored Documents</button>
+        <div id="documentCheck"></div>
+    </div>
+
+    <div class="debug-section">
+        <h3>Step 4: Clear all data (if needed)</h3>
+        <button onclick="clearAllData()" style="background: #ff6b6b;">⚠️ Clear All Filters & Documents</button>
+    </div>
+
+    <script>
+        function checkFilters() {
+            const filters = localStorage.getItem('attendance_custom_filters');
+            const output = document.getElementById('filterCheck');
+
+            if (!filters) {
+                output.innerHTML = '<p class="warning">❌ No filters found in localStorage</p>';
+                return;
+            }
+
+            try {
+                const parsed = JSON.parse(filters);
+                output.innerHTML = `
+                    <p class="success">✅ Filters found!</p>
+                    <pre>${JSON.stringify(parsed, null, 2)}</pre>
+                    <p>Total dates with filters: ${Object.keys(parsed).length}</p>
+                `;
+            } catch (e) {
+                output.innerHTML = `<p class="warning">❌ Error parsing filters: ${e.message}</p>`;
+            }
+        }
+
+        function testFilter() {
+            const date = document.getElementById('testDate').value;
+            const attendanceId = document.getElementById('testAttendanceId').value;
+            const output = document.getElementById('filterTest');
+
+            if (!date || !attendanceId) {
+                output.innerHTML = '<p class="warning">❌ Please enter both date and attendance ID</p>';
+                return;
+            }
+
+            const filters = localStorage.getItem('attendance_custom_filters');
+            if (!filters) {
+                output.innerHTML = '<p class="warning">❌ No filters in localStorage</p>';
+                return;
+            }
+
+            try {
+                const allFilters = JSON.parse(filters);
+                const filter = allFilters[date]?.[attendanceId];
+
+                if (!filter) {
+                    output.innerHTML = `
+                        <p class="warning">❌ No filter found for:</p>
+                        <ul>
+                            <li>Date: ${date}</li>
+                            <li>Attendance ID: ${attendanceId}</li>
+                        </ul>
+                        <p>Available dates:</p>
+                        <pre>${Object.keys(allFilters).join(', ')}</pre>
+                    `;
+                    return;
+                }
+
+                // Test validity
+                const viewDateObj = new Date(date);
+                const validFrom = filter.validFrom ? new Date(filter.validFrom) : null;
+                const validUntil = filter.validUntil ? new Date(filter.validUntil) : null;
+
+                let isValid = true;
+                let reason = 'Valid';
+
+                if (validFrom && viewDateObj < validFrom) {
+                    isValid = false;
+                    reason = 'Not yet valid (before validFrom)';
+                }
+
+                if (validUntil && viewDateObj > validUntil) {
+                    isValid = false;
+                    reason = 'Expired (after validUntil)';
+                }
+
+                output.innerHTML = `
+                    <p class="${isValid ? 'success' : 'warning'}">
+                        ${isValid ? '✅' : '❌'} Filter ${isValid ? 'IS' : 'IS NOT'} valid
+                    </p>
+                    <p><strong>Reason:</strong> ${reason}</p>
+                    <pre>${JSON.stringify(filter, null, 2)}</pre>
+                    <h4>Date Comparison:</h4>
+                    <ul>
+                        <li>Viewing Date: ${viewDateObj.toISOString()}</li>
+                        <li>Valid From: ${validFrom ? validFrom.toISOString() : 'Not set'}</li>
+                        <li>Valid Until: ${validUntil ? validUntil.toISOString() : 'Not set (permanent)'}</li>
+                    </ul>
+                    <h4>Why yellow might not show:</h4>
+                    ${!isValid ? '<p class="warning">⚠️ Filter is not currently valid for this date!</p>' : ''}
+                    ${!filter.validFrom ? '<p class="warning">⚠️ validFrom is missing!</p>' : ''}
+                `;
+            } catch (e) {
+                output.innerHTML = `<p class="warning">❌ Error: ${e.message}</p>`;
+            }
+        }
+
+        function checkDocuments() {
+            const docs = localStorage.getItem('attendance_documents');
+            const output = document.getElementById('documentCheck');
+
+            if (!docs) {
+                output.innerHTML = '<p class="warning">❌ No documents found in localStorage</p>';
+                return;
+            }
+
+            try {
+                const parsed = JSON.parse(docs);
+                let count = 0;
+                for (const date in parsed) {
+                    count += Object.keys(parsed[date]).length;
+                }
+
+                output.innerHTML = `
+                    <p class="success">✅ Documents found!</p>
+                    <p>Total documents: ${count}</p>
+                    <pre>${JSON.stringify(parsed, null, 2).substring(0, 500)}...</pre>
+                `;
+            } catch (e) {
+                output.innerHTML = `<p class="warning">❌ Error parsing documents: ${e.message}</p>`;
+            }
+        }
+
+        function clearAllData() {
+            if (confirm('Are you sure you want to clear ALL filters and documents? This cannot be undone!')) {
+                localStorage.removeItem('attendance_custom_filters');
+                localStorage.removeItem('attendance_documents');
+                alert('✅ All data cleared!');
+                location.reload();
+            }
+        }
+    </script>
+</body>
+
+</html>
